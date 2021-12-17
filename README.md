@@ -16,6 +16,9 @@ deploy:
 ```
 
 ## Принцип работы
-Файл с конфигурацией workflow линтинга, теста, сборки и деплоя проекта расположен здесь: .github/workflows/deploy-project.yml. В некоторых шагах (Install dependencies, Linting scripts и т.д.) используется команда make. Конфигурация этих команд описана в /Makefile.
+Файл с конфигурацией workflow линтинга, теста, сборки и деплоя проекта расположен здесь: .github/workflows/deploy-project.yml. 
+
+В некоторых шагах (Install dependencies, Linting scripts и т.д.) используется команда make. Конфигурация этих команд описана в /Makefile.
+
 Workflow запускается при каждом push'е в ветку main. Процесс работы workflow можно наблюдать во вкладке Actions ([Читать подробнее о Git Actions](https://docs.github.com/en/actions/quickstart)).
 
