@@ -1,0 +1,48 @@
+name: deploy-project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-vesrion: [16.x]
+    steps:
+      - name: Clone this repository
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Install dependencies
+        run: make install
+
+      - name: Linting scripts
+        run: make lint
+
+      - name: Linting styles
+        run: make stylelint
+
+      - name: Testing project
+        run: make test
+
+      - name: Building project
+        run: make build
+
+      - name: Create known-hosts file
+        run: mkdir ~/.ssh && ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.KEY }}
+          known_hosts: 'random string'
+
+      - name: Deploy
+        run: make deploy

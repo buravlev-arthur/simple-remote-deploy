@@ -1,0 +1,8 @@
+.hello {
+  color: #000;
+  background: url("./webpack.png");
+}
+
+img {
+  width: 120px;
+}
