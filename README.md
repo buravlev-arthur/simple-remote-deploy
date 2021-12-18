@@ -12,8 +12,9 @@
 Для команды "deploy" в /Makefile необходимо указать актуальные данные для подключения вместо текущих:
 ```
 deploy:
-	cd ./dist && rsync -r --archive --compress --delete . [user name]@[ip adress of web-server]:[path]
+	cd ./dist && rsync -r --archive --compress --delete . [username]@[ip-address]:[path]
 ```
+Подробнее о программе rsync: [читайте здесь](https://ru.wikipedia.org/wiki/Rsync).
 
 ## Принцип работы
 Файл с конфигурацией workflow линтинга, теста, сборки и деплоя проекта расположен здесь: .github/workflows/deploy-project.yml. 
