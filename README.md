@@ -1,4 +1,4 @@
-![example workflow](https://github.com/buravlev-arthur/simple-remote-deploy/actions/workflows/deploy-project/badge.svg)
+![example workflow](https://github.com/buravlev-arthur/simple-remote-deploy/actions/workflows/deploy-project.yml/badge.svg)
 
 # Простое развертывание сборки проекта на удаленном сервере
 Это пустой Webpack проект, который демонстрирует процесс CI/CD с использованием сервиса Git Actions.
